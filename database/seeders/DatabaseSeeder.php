@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\tag;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Psy\Readline\Hoa\EventBucket;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +16,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call([
+            EventSeeder::class,
+            UserSeeder::class,
+            TagSeeder::class,
+        ]);
     }
 }
