@@ -14,7 +14,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        // ciao sono antonio 
+        // ciao
     }
 
     /**
