@@ -11,9 +11,12 @@
             <ul>
                 @foreach($events as $event)
                 <li class="my-5">
-                    <h3>
-                        nome dell'evento:{{ $event->nome}}
-                    </h3>
+
+                    <a href="{{ route('events.show', $event -> id) }}">
+                        <h3>
+                            nome dell'evento:{{ $event->nome}}
+                        </h3>
+                    </a>
                     <div>
                         <strong> luogo evento: </strong>{{ $event->luogo}}
                     </div>

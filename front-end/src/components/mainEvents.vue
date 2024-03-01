@@ -6,7 +6,7 @@ export default {
 </script>
 
 <template>
-porco diamine
+    
 </template>
 
 <style lang="scss">
