@@ -19,6 +19,9 @@ use Faker\Guesser\Name;
 
 Route::get('/', [EventController::class, 'index'])->Name('index.events');
 
+Route :: get('/events/{id}', [EventController :: class, 'show'])
+    -> name('events.show');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
