@@ -42,9 +42,6 @@ Route::middleware('auth')->group(function () {
         ->name('events.edit');
     Route::put('/events/{id}/upgrade', [EventController::class, 'update'])
         ->name('events.update');
-
-
-
     Route::delete('/events/{id}', [EventController::class, 'destroy'])->name('events.destroy');
 
 });
