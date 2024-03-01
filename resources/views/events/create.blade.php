@@ -14,6 +14,7 @@
                         <option value="{{$user->id}}"> salve {{$user->name}}</option>
                     </select>
                 </div>
+
                 <!-- input dove si mette il nuovo evento -->
                 <div>
                     <label for="nome"> inserisci il nome</label>
