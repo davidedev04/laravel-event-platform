@@ -17,7 +17,7 @@ use Faker\Guesser\Name;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+// rotta base dell'index
 Route::get('/', [EventController::class, 'index'])->Name('index.events');
 
 Route::get('/dashboard', function () {
@@ -25,9 +25,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-
+    // rotta per andare a pagina create
     Route::get('/event/create', [EventController::class, 'create'])->name('event.create');
+    // rotta per inserie l'evento dentro al database
     Route::post('/event/create', [EventController::class, 'store'])->name('event.store');
+    
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
