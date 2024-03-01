@@ -5,8 +5,9 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-use App\Models\event;
+
 use App\Models\User;
+use GuzzleHttp\Promise\Create;
 
 class UserSeeder extends Seeder
 {
@@ -17,10 +18,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->count(20)->make()->each(function ($users) {
-            $event = event::inRandomOrder()->first();
-            $users->event()->associate($event);
-            $users->save();
-        });
+        User::factory()->count(10)->Create();
     }
 }

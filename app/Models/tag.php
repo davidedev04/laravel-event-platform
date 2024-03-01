@@ -11,6 +11,6 @@ class tag extends Model
 
     public function events()
     {
-        return $this->belongsToMany(event::class);
+        return $this->belongsToMany(Event::class);
     }
 }

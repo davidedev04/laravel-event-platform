@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-use App\Models\event;
 use App\Models\tag;
 
 class TagSeeder extends Seeder
@@ -17,11 +16,6 @@ class TagSeeder extends Seeder
      */
     public function run()
     {
-        tag::factory()->count(15)->create()->each(function ($tags) {
-
-            $event = event::inRandomOrder()->limit(3)->get();
-            $tags->events()->attach($event);
-            $tags->save();
-        });
+        Tag :: factory() -> count(10) -> create();
     }
 }
