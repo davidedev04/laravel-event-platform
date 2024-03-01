@@ -25,7 +25,10 @@ class ApiController extends Controller
 
         $event = event :: find($id);
 
-        return response()->json($event);
+        return response()->json([
+            'status' => 'success',
+            'events' => $event
+        ]);
         
     }
 

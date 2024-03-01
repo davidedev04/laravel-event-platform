@@ -10,14 +10,16 @@ export default {
         }
     },
     methods: {
-        showEvent(i) {
+        showEvent(id) {
 
-            this.singleEvent = i;
-            axios.get("http://localhost:8000/api/v1/events", this.singleEvent)
+            axios.get("http://localhost:8000/api/v1/events/" + id)
                 .then((res) => {
                     
                     const data = res.data;
                     console.log('data: ', data);
+
+                    this.singleEvent = res.data.events;
+                    console.log('data: ', this.singleEvent);
 
                 })
                 .catch(err => {
@@ -27,6 +29,11 @@ export default {
             this.ghostEvent = true;
 
 
+        },
+        turnBack() {
+
+            this.ghostEvent = false;
+            
         }
     },
     mounted() {
@@ -62,9 +69,11 @@ export default {
             </li>
         </ul>
         <div v-else> 
-            <!-- <h4> {{ indexEvent }} </h4> -->
-                
-    
+            <h4> {{ singleEvent.nome }} </h4>
+            <div> {{ singleEvent.luogo }}</div>
+            <div> {{ singleEvent.data }}</div>
+            <div> {{ singleEvent.descrizione }}</div>
+            <button @click="turnBack"> Home </button>
         </div>
 
     </div>
