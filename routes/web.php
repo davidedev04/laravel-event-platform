@@ -18,6 +18,9 @@ use Faker\Guesser\Name;
 |
 */
 // rotta base dell'index
+
+Route::get('/events/{id}', [EventController::class, 'show'])
+    ->name('events.show');
 Route::get('/', [EventController::class, 'index'])->Name('index.events');
 
 
@@ -40,8 +43,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/events/{id}/upgrade', [EventController::class, 'update'])
         ->name('events.update');
 
-    Route::get('/events/{id}', [EventController::class, 'show'])
-        ->name('events.show');
+
 
     Route::delete('/events/{id}', [EventController::class, 'destroy'])->name('events.destroy');
 

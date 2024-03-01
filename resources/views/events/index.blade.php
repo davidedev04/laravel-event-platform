@@ -27,7 +27,7 @@
                         <strong>descrizione evento: </strong>{{ $event->descrizione}}
                     </div>
                     @auth
-                        <form action="{{ route('events.destroy', $event -> id) }}" method="POST">
+                        <form action="{{ route('events.destroy', $event->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
 
@@ -35,8 +35,9 @@
                         </form>
                     @endauth
 
-                    
+                    @auth
                     <a href="{{ route('events.edit', $event -> id) }}"><button>edit</button></a>
+                    @endauth
                     
                 </li>
                 @endforeach
