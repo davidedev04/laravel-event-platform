@@ -37,11 +37,13 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/events/{id}/edit', [EventController::class, 'edit'])
         ->name('events.edit');
-    Route:: put('/events/{id}/upgrade', [EventController::class, 'update'])
+    Route::put('/events/{id}/upgrade', [EventController::class, 'update'])
         ->name('events.update');
 
     Route::get('/events/{id}', [EventController::class, 'show'])
         ->name('events.show');
+
+    Route::delete('/events/{id}', [EventController::class, 'destroy'])->name('events.destroy');
 
 });
 
