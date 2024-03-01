@@ -26,10 +26,8 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <div class="logo_laravel">
-                        <img src="{{Vite::asset('public/img/th.jpg')}}" alt="#" class="logo-page">
-                    </div>
-                    {{-- config('app.name', 'Laravel') --}}
+                    <img src="{{Vite::asset('public/img/th.jpg')}}" alt="">
+
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -40,7 +38,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/') }}">torna alla home</a>
+                            <h3><a class="nav-link" href="{{url('/') }}">torna alla home</a></h3>
                         </li>
                     </ul>
 
