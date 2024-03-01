@@ -28,7 +28,7 @@
                     @endauth
                     
                     @auth
-                    <button>aggiorna</button>
+                    <button>edit</button>
                     @endauth
                 </li>
                 @endforeach
