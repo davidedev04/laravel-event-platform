@@ -63,7 +63,10 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        //
+        $event = Event::find($id);
+        $tags = Tag::all();
+
+        return view('events.edit', compact('event', 'tags'));
     }
 
     /**
