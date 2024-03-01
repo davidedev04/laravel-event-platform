@@ -110,6 +110,12 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $event = event :: find($id);
+
+        $event -> tags() -> detach();
+
+        $event -> delete();
+
+        return redirect() -> route('index.events');
     }
 }

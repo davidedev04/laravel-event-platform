@@ -20,6 +20,12 @@ use Faker\Guesser\Name;
 // rotta base dell'index
 Route::get('/', [EventController::class, 'index'])->Name('index.events');
 
+<<<<<<< HEAD
+=======
+Route :: get('/events/{id}', [EventController :: class, 'show']) -> name('events.show');
+
+Route :: delete('/events/{id}', [EventController :: class, 'destroy']) -> name('events.destroy');
+>>>>>>> branch-massi
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -27,7 +27,12 @@
                         <strong>descrizione evento: </strong>{{ $event->descrizione}}
                     </div>
                     @auth
-                    <button>delete</button>
+                        <form action="{{ route('events.destroy', $event -> id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit"> Delete </button>
+                        </form>
                     @endauth
 
                     @auth
