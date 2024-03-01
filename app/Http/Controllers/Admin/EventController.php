@@ -30,7 +30,11 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('events.create');
+
+        $user = auth()->user();
+        $tags = tag::all();
+
+        return view('events.create', compact('tags', 'user'));
     }
 
     /**
@@ -41,7 +45,22 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $event = new Event;
+
+        $event->nome = $data['nome'];
+        $event->luogo = $data['luogo'];
+        $event->data = $data['data'];
+        $event->descrizione = $data['descrizione'];
+
+        $event->user()->associate($data['nome_utente']);
+
+        $event->save();
+
+        $event->tags()->attach($data['tags']);
+
+        return redirect()->route('index.events');
     }
 
     /**

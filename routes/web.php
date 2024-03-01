@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\EventController;
+use Database\Seeders\EventSeeder;
 use Faker\Guesser\Name;
 
 /*
@@ -26,6 +27,7 @@ Route::get('/dashboard', function () {
 Route::middleware('auth')->group(function () {
 
     Route::get('/event/create', [EventController::class, 'create'])->name('event.create');
+    Route::post('/event/create', [EventController::class, 'store'])->name('event.store');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
