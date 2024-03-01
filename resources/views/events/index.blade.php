@@ -6,7 +6,7 @@
         <div class="text-center">
             <h1>lista di eventi</h1>
             @auth
-            <button>create</button>
+            <a href="{{route('event.create')}}"> crea un nuovo evento</a>
             @endauth
             <ul>
                 @foreach($events as $event)
@@ -26,7 +26,7 @@
                     @auth
                     <button>delete</button>
                     @endauth
-                    
+
                     @auth
                     <button>edit</button>
                     @endauth
