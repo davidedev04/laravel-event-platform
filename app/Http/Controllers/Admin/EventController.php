@@ -5,6 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\event;
+use App\Models\tag;
+use App\Models\User;
+
+
 class EventController extends Controller
 {
     /**
@@ -14,7 +19,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        // test di antonio brench deu 
+        $events = event::all();
+        return view('events.index', compact('events'));
     }
 
     /**
