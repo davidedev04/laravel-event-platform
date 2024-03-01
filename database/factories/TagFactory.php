@@ -18,7 +18,6 @@ class TagFactory extends Factory
     {
         return [
             'nome' => fake()->word(),
-            'cognome' => fake()->word(),
         ];
     }
 }
