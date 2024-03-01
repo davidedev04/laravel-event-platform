@@ -20,12 +20,6 @@ use Faker\Guesser\Name;
 // rotta base dell'index
 Route::get('/', [EventController::class, 'index'])->Name('index.events');
 
-<<<<<<< HEAD
-=======
-Route :: get('/events/{id}', [EventController :: class, 'show']) -> name('events.show');
-
-Route :: delete('/events/{id}', [EventController :: class, 'destroy']) -> name('events.destroy');
->>>>>>> branch-massi
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -36,14 +30,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/event/create', [EventController::class, 'create'])->name('event.create');
     // rotta per inserie l'evento dentro al database
     Route::post('/event/create', [EventController::class, 'store'])->name('event.store');
-    
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route :: get('/events/{id}', [EventController :: class, 'show'])
-    -> name('events.show');
-
+    Route::get('/events/{id}', [EventController::class, 'show'])
+        ->name('events.show');
+    Route::delete('/events/{id}', [EventController::class, 'destroy'])->name('events.destroy');
 });
 
 require __DIR__ . '/auth.php';
