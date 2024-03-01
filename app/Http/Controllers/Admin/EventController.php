@@ -30,7 +30,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        // prova massi nel branch-massi
+        return view('events.create');
     }
 
     /**
