@@ -12,7 +12,7 @@
                 @foreach($events as $event)
                 <li class="my-5">
 
-                    <a href="{{ route('events.show', $event -> id) }}">
+                    <a href="{{ route('events.show', $event->id) }}">
                         <h3>
                             nome dell'evento:{{ $event->nome}}
                         </h3>
@@ -35,9 +35,9 @@
                         </form>
                     @endauth
 
-                    @auth
-                    <button>edit</button>
-                    @endauth
+                    
+                    <a href="{{ route('events.edit', $event -> id) }}"><button>edit</button></a>
+                    
                 </li>
                 @endforeach
             </ul>

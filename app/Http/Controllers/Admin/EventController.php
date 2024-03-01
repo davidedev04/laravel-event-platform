@@ -74,7 +74,7 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        $event = event :: find($id);
+        $event = event::find($id);
 
         return view('events.show', compact('event'));
     }
@@ -87,7 +87,10 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        //
+        $event = event::find($id);
+        $tags = tag::all();
+
+        return view('events.edit', compact('event', 'tags'));
     }
 
     /**
@@ -99,7 +102,22 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        // creato nuovo evento
+        $event = event :: find($id);
+        // creazione dell'evento
+        $event->nome = $data['nome'];
+        $event->luogo = $data['luogo'];
+        $event->data = $data['data'];
+        $event->descrizione = $data['descrizione'];
+        // associato l'utente con l'evento che ha creato
+        $event->user()->associate($data['nome_utente']);
+
+        $event -> save();
+
+        $event -> tags() -> sync($data['tags']);
+
+        return redirect() -> route('events.show', $event -> id);
     }
 
     /**
