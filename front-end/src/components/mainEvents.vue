@@ -5,7 +5,9 @@ export default {
 };
 </script>
 
-<template>ciao sono il main</template>
+<template>
+ciao sono il main
+</template>
 
 <style lang="scss">
 @use "./../style/generals.scss";
