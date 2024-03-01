@@ -3,52 +3,50 @@
 @section('content')
 
     <div class="text-center">
-        <h1>Event Create</h1>
-        <form
-            action="{{ route('events.update', $event -> id) }}"
-            method="POST"
-        >
-
-            @csrf
-            @method('PATCH')
-
-            <label for="title">Title</label>
-            <br>
-            <input type="text" name="title" id="title" value="{{ $event -> title }}">
-            <br>
-            <label for="description">Description</label>
-            <br>
-            <textarea name="description" id="description" cols="30" rows="10">{{ $event -> description }}</textarea>
-            <br>
-            <label for="date">Date</label>
-            <br>
-            <input type="date" name="date" id="date" value="{{ $event -> getDateOnly() }}">
-            <br>
-            <label for="time">Time</label>
-            <br>
-            <input type="time" name="time" id="time" value="{{ $event -> getTimeOnly() }}">
-            <br>
-            <label for="location">Location</label>
-            <br>
-            <input type="text" name="location" id="location" value="{{ $event -> location }}">
-            <br>
-            <br>
-            <h3><label for="tags">Tags</label></h3>
-            @foreach($tags as $tag)
+        <h1>Event: </h1>
+        <form action="{{route('events.update', $event->id)}}" method="POST">
+                @csrf
+                @method('PUT')
+                <!-- input dove c'è l'utente collegato -->
                 <div>
-                    <input type="checkbox" name="tags[]" value="{{ $tag -> id }}" id="tag{{ $tag -> id }}"
-                        @foreach($event -> tags as $eventTag)
-                            @if($eventTag -> id == $tag -> id)
-                                checked
-                            @endif
-                        @endforeach
-                    >
-                    <label for="tag{{ $tag -> id }}">{{ $tag -> name }}</label>
+                    <select name="nome_utente" id="nome_utente">
+                        <option value="{{ $event -> id}}">{{$event->nome}}</option>
+                    </select>
+                </div>
+                <!-- input dove si mette il nuovo evento -->
+                <div>
+                    <label for="nome"> inserisci il nome</label>
+                    <br>
+                    <input placeholder="{{$event->nome}}" type="text" id="nome" name="nome">
+                </div>
+                <!-- input dove si crea il luogo dell'evento -->
+                <div>
+                    <label for="luogo"> inserisci il luogo dell'evento </label>
+                    <br>
+                    <input placeholder="{{$event->luogo}}" type="text" id="luogo" name="luogo">
+                </div>
+                <!-- input dove si mette la data dell'evento -->
+                <div>
+                    <label for="data"> inserisci il nome</label>
+                    <br>
+                    <input type="date" name="data" id="data">
+                </div>
+                <!-- input dove si mette la descrizione dell'evento -->
+                <div>
+                    <label for="descrizione"> inserisci la descrizione dell'evento</label>
+                    <br>
+                    <input placeholder="{{$event->descrizione}}" type="text" id="descrizione" name="descrizione">
+                </div>
+                <!-- tutti i tags disponibili -->
+                @foreach($tags as $tag)
+                <div>
+                    <input type="checkbox" name="tags[]" value="{{ $tag->id }}" id="tag{{ $tag->id }}">
+                    <label for="">{{ $tag->nome }}</label>
                     <br>
                 </div>
-            @endforeach
-            <input type="submit" value="UPDATE">
-        </form>
+
+                @endforeach
+                <input type="submit" value="aggiorna evento">
     </div>
 
 @endsection
