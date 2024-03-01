@@ -6,7 +6,7 @@ export default {
 </script>
 
 <template>
-ciao sono il main
+porco diamine
 </template>
 
 <style lang="scss">
