@@ -4,6 +4,6 @@ export default {
 };
 </script>
 
-<template></template>
+<template>qua ci sara gli abouts</template>
 
 <style scoped lang="scss"></style>
