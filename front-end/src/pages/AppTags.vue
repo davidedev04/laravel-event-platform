@@ -4,7 +4,7 @@ export default {
 };
 </script>
 
-<template>ciao sono home</template>
+<template>qua ci saranno i tags</template>
 
 <style scoped lang="scss">
 

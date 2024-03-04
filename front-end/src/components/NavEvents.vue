@@ -11,6 +11,7 @@ export default {
             <h1>
                 <a class="navbar-brand">eventi disponibili</a>
             </h1>
+            <!-- tre rotte che portano a 3 pagine diverse  -->
             <a class="nav-link active" aria-current="page" href="">
                 <router-link :to="{ name: 'home' }"> home </router-link>
             </a>
@@ -19,7 +20,7 @@ export default {
             </a>
             <a class="nav-link" href="">
                 <!-- link per page contacts -->
-                <router-link :to="{ name: 'tags' }"> contacts </router-link>
+                <router-link :to="{ name: 'tags' }"> tags </router-link>
             </a>
             <form class="d-flex">
                 <input
