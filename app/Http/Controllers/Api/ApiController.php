@@ -14,7 +14,10 @@ class ApiController extends Controller
     public function getEvents()
     {
 
-        $event = event::all();
+        // $event = event::all();
+        // prende tutti i valori di event e gli user collegati a quel evento 
+        // richiamando il metodo user nei model event
+        $event = event::with('user')->get();
 
         return response()->json([
             'status' => 'success',

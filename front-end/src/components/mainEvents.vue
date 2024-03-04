@@ -67,6 +67,10 @@ export default {
                         <strong>descrizione dell'evento:</strong>
                         {{ event.descrizione }}
                     </div>
+                    <div class="my-3">
+                        <strong>user che ha creato l'evento</strong>
+                        {{ event.user.name }}
+                    </div>
                     <div class="btn-group">
                         <a
                             href="#"
