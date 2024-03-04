@@ -18,7 +18,6 @@ export default {
 
         <main class="mt-5">
             <router-view></router-view>
-            <mainEvents />
         </main>
     </div>
 </template>

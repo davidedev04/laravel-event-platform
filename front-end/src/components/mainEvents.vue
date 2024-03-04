@@ -1,15 +1,14 @@
 <script>
-import AppAbout from "../pages/AppAbout.vue";
+import AppHome from "../pages/AppHome.vue";
 export default {
     components: {
-        AppAbout,
+        AppHome,
     },
 };
 </script>
 
 <template>
-    <AppAbout />
-   
+    <AppHome />
 </template>
 
 <style lang="scss">
