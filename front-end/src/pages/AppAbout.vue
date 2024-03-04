@@ -4,6 +4,6 @@ export default {
 };
 </script>
 
-<template>ciao sono tags</template>
+<template></template>
 
 <style scoped lang="scss"></style>
