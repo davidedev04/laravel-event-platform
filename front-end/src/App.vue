@@ -15,7 +15,9 @@ export default {
         <header class="pb-5">
             <Nav />
         </header>
+
         <main class="mt-5">
+            <router-view></router-view>
             <mainEvents />
         </main>
     </div>
